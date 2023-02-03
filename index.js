@@ -3,18 +3,11 @@ class SortedList {
     this.items = [];
     this.length = this.items.length;
   }
-  // add(item) {
-  //   this.items.push(item)
-  //   this.items.sort();
-  //   this.length = this.items.length;
-  // }
-
   add(item) {
-    let i = 0;
-    while (i < this.items.length && this.items[i] < item) {
-      i++;
-    }
-    this.items.splice(i, 0, item);
+    this.items.push(item);
+    this.items.sort((a, b) => {
+      return a - b;
+    });
     this.length = this.items.length;
   }
 
